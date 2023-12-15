@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Weather Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .weather-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand d-flex justify-content-center w-100" href="#">
+        <i class="bi bi-cloud-sun"></i> Weather Sphere
+      </a>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <!-- Weather App Heading and Buttons -->
+    <div class="weather-header">
+      <div class="d-flex">
+        <button class="btn btn-outline-primary me-2">Hourly</button>
+        <button class="btn btn-outline-secondary me-2">Weekly</button>
+        <button class="btn btn-outline-success me-2">Monthly</button>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Collapse Section -->
+    <div class="accordion" id="weatherAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="cityWeatherHeading">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cityWeather" aria-expanded="true" aria-controls="cityWeather">
+            Windsor
+          </button>
+        </h2>
+        <div id="cityWeather" class="accordion-collapse collapse show" aria-labelledby="cityWeatherHeading" data-bs-parent="#weatherAccordion">
+          <div class="accordion-body">
+            Weather of City
+            <!-- Table -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Max Temp</th>
+                  <th scope="col">Min Temp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data for the table -->
+                <tr>
+                  <td>Monday</td>
+                  <td>25°C</td>
+                  <td>15°C</td>
+                </tr>
+                <tr>
+                  <td>Tuesday</td>
+                  <td>27°C</td>
+                  <td>17°C</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper Images -->
+    <div class="swiper-container my-4">
+      <div class="swiper-wrapper">
+        <!-- Images -->
+        <div class="swiper-slide"><img src="cloudy.png" alt="Weather Image 1"></div>
+        <div class="swiper-slide"><img src="partlycloud.png" alt="Weather Image 2"></div>
+        <div class="swiper-slide"><img src="rain.png" alt="Weather Image 3"></div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".swiper-container", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>
